@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class StringSortingTest {
@@ -15,9 +17,8 @@ public class StringSortingTest {
   In the setup method ,object of class is declared
   */
     @Before
-    void setUp()
-    {
-        this.stringSorting=new StringSorting();
+    public void setUp() {
+        this.stringSorting = new StringSorting();
     }
 
     /*  @After annotation is used on a method containing java code to run after each test case.
@@ -27,29 +28,29 @@ public class StringSortingTest {
     */
 
     @After
-    void tearDown()
-    {
-        this.stringSorting=null;
+    public void tearDown() {
+        this.stringSorting = null;
     }
-
 
 
     @Test
     public void givenStringShouldReturnSortedString() {
-        String actualResult=this.stringSorting.sortedString("java is good");
-        String expectedResult="aajv is dgoo";
-        assertEquals(actualResult,expectedResult);
+        String actualResult = this.stringSorting.sortedString("java is good");
+        String expectedResult = "good is java";
+        assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void givenEmptyStringShouldReturnErrorMessage() {
-        String actualResult=this.stringSorting.sortedString("");
-        String expectedResult="";
-        assertEquals(actualResult,expectedResult);
+        String actualResult = this.stringSorting.sortedString("");
+        String expectedResult = "";
+        assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void givenStringShouldReturnNegativeResult() {
-        String actualResult=this.stringSorting.sortedString("java is programing language");
-        String expectedResult="aajv is programing aaegglnu";
-        assertNotEquals(actualResult,expectedResult);
+        String actualResult = this.stringSorting.sortedString("java is programing language");
+        String expectedResult = "aajv is programing aaegglnu";
+        assertNotEquals(expectedResult, actualResult);
     }
 }

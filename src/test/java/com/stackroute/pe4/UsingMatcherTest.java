@@ -10,15 +10,13 @@ public class UsingMatcherTest {
     UsingMatcher usingMatcher;
 
 
-
     /* @Before annotation is used on a method containing Java
   code to run before each test case. i.e it runs before each test execution.
   In the setup method ,object of class is declared
   */
     @Before
-    void setUp()
-    {
-        this.usingMatcher=new UsingMatcher();
+    public void setUp() {
+        this.usingMatcher = new UsingMatcher();
     }
 
     /*  @After annotation is used on a method containing java code to run after each test case.
@@ -28,30 +26,29 @@ public class UsingMatcherTest {
     */
 
     @After
-    void tearDown()
-    {
-        this.usingMatcher=null;
+    public void tearDown() {
+        this.usingMatcher = null;
     }
+
     @Test
-    public void givenInputShouldReturnPositiveOutput()
-    {
-        String actualResult=this.usingMatcher.findPosition("She sells seashells by the seashore","se");
-        String expectedResult="Founded at:4-6,Founded at:10-12,Founded at:27-29";
-        assertEquals(expectedResult,actualResult);
+    public void givenInputShouldReturnPositiveOutput() {
+        String actualResult = this.usingMatcher.findPosition("She sells seashells by the seashore", "se");
+        String expectedResult = "Founded at:4-6Founded at:10-12Founded at:27-29";
+        assertEquals(expectedResult, actualResult);
     }
+
     @Test
-    public void givenInputShouldReturnNegativeOutput()
-    {
-        String actualResult=this.usingMatcher.findPosition("She sells seashells by the seashore","ab");
-        String expectedResult="Founded at:4-6,Founded at:27-29";
-        assertNotEquals(expectedResult,actualResult);
+    public void givenInputShouldReturnNegativeOutput() {
+        String actualResult = this.usingMatcher.findPosition("She sells seashells by the seashore", "ab");
+        String expectedResult = "Not Found";
+        assertEquals(expectedResult, actualResult);
     }
+
     @Test
-    public void givenEmptyInputShouldReturnErrorMessage()
-    {
-        String actualResult=this.usingMatcher.findPosition("","se");
-        String expectedResult="Put non empty input";
-        assertNotEquals(expectedResult,actualResult);
+    public void givenEmptyInputShouldReturnErrorMessage() {
+        String actualResult = this.usingMatcher.findPosition("", "se");
+        String expectedResult = "Put non empty input";
+        assertNotEquals(expectedResult, actualResult);
     }
 
 }

@@ -16,9 +16,8 @@ public class PresenceOfNameTest {
   In the setup method ,object of class is declared
   */
     @Before
-    void setUp()
-    {
-        this.presenceOfName=new PresenceOfName();
+    public void setUp() {
+        this.presenceOfName = new PresenceOfName();
     }
 
     /*  @After annotation is used on a method containing java code to run after each test case.
@@ -28,33 +27,32 @@ public class PresenceOfNameTest {
     */
 
     @After
-    void tearDown()
-    {
-        this.presenceOfName=null;
+    public void tearDown() {
+        this.presenceOfName = null;
     }
-    @Test
-    public void giverProperInputShouldReturnPositiveOutput()
-    {
 
-        String actualResult=this.presenceOfName.findName(" This is Harry.","Harry");
-        String expectedResult="Is Harry here ? true";
-        assertEquals(expectedResult,actualResult);
+    @Test
+    public void giverProperInputShouldReturnPositiveOutput() {
+
+        String actualResult = this.presenceOfName.findName(" This is Harry", "Harry");
+        String expectedResult = "Is Harry here ? true";
+        assertEquals(expectedResult, actualResult);
     }
-    @Test
-    public void giverInputShouldReturnNegativeOutput()
-    {
 
-        String actualResult=this.presenceOfName.findName(" This is Henry.","Harry");
-        String expectedResult="Is Harry here ? false";
-        assertEquals(expectedResult,actualResult);
+    @Test
+    public void giverInputShouldReturnNegativeOutput() {
+
+        String actualResult = this.presenceOfName.findName(" This is Henry", "Harry");
+        String expectedResult = "Is Harry here ? false";
+        assertEquals(expectedResult, actualResult);
     }
-    @Test
-    public void giverEmptyInputShouldReturnErrorMessage()
-    {
 
-        String actualResult=this.presenceOfName.findName(" ","Harry");
-        String expectedResult="enter non empty input";
-        assertEquals(expectedResult,actualResult);
+    @Test
+    public void giverEmptyInputShouldReturnErrorMessage() {
+
+        String actualResult = this.presenceOfName.findName(" ", "Harry");
+        String expectedResult = "enter non empty input";
+        assertNotEquals(expectedResult, actualResult);
     }
 
 
