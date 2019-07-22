@@ -3,3 +3,4 @@ out/
 
 *.iml
 /java_pe4.iml
+!/java_pe4.iml
