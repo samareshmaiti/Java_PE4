@@ -30,25 +30,29 @@ public class PresenceOfNameTest {
     public void tearDown() {
         this.presenceOfName = null;
     }
+    //this test method checks for whether the name is present and return true as output
+
 
     @Test
-    public void giverProperInputShouldReturnPositiveOutput() {
+    public void giverProperInputShouldReturnTrueMessage() {
 
         String actualResult = this.presenceOfName.findName(" This is Harry", "Harry");
         String expectedResult = "Is Harry here ? true";
         assertEquals(expectedResult, actualResult);
     }
+    //this test method checks for whether the name is present and if not return false as output
 
     @Test
-    public void giverInputShouldReturnNegativeOutput() {
+    public void giverInputShouldReturnFalseMessage() {
 
         String actualResult = this.presenceOfName.findName(" This is Henry", "Harry");
         String expectedResult = "Is Harry here ? false";
         assertEquals(expectedResult, actualResult);
     }
+    //this test method checks for whether the checked string is empty or not
 
     @Test
-    public void giverEmptyInputShouldReturnErrorMessage() {
+    public void giverEmptyInputShouldReturnToEnterNonemptyInput() {
 
         String actualResult = this.presenceOfName.findName(" ", "Harry");
         String expectedResult = "enter non empty input";

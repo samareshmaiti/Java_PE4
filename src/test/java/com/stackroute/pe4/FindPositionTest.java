@@ -6,8 +6,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class UsingMatcherTest {
-    UsingMatcher usingMatcher;
+public class FindPositionTest {
+    FindPosition findPosition;
 
 
     /* @Before annotation is used on a method containing Java
@@ -16,7 +16,7 @@ public class UsingMatcherTest {
   */
     @Before
     public void setUp() {
-        this.usingMatcher = new UsingMatcher();
+        this.findPosition = new FindPosition();
     }
 
     /*  @After annotation is used on a method containing java code to run after each test case.
@@ -27,26 +27,30 @@ public class UsingMatcherTest {
 
     @After
     public void tearDown() {
-        this.usingMatcher = null;
+        this.findPosition = null;
     }
+    //this test method checks for the  occurance of the small string and checks for whether
+    //actual result and expected result are equals or not
 
     @Test
-    public void givenInputShouldReturnPositiveOutput() {
-        String actualResult = this.usingMatcher.findPosition("She sells seashells by the seashore", "se");
+    public void givenInputShouldReturnOccurancePositions() {
+        String actualResult = this.findPosition.findPosition("She sells seashells by the seashore", "se");
         String expectedResult = "Founded at:4-6Founded at:10-12Founded at:27-29";
         assertEquals(expectedResult, actualResult);
     }
+    //this test method checks whether the smaller string is present or not
 
     @Test
-    public void givenInputShouldReturnNegativeOutput() {
-        String actualResult = this.usingMatcher.findPosition("She sells seashells by the seashore", "ab");
+    public void givenInputShouldReturnNotFound() {
+        String actualResult = this.findPosition.findPosition("She sells seashells by the seashore", "ab");
         String expectedResult = "Not Found";
         assertEquals(expectedResult, actualResult);
     }
 
+    //this test method checks for empty string
     @Test
-    public void givenEmptyInputShouldReturnErrorMessage() {
-        String actualResult = this.usingMatcher.findPosition("", "se");
+    public void givenEmptyInputShouldReturnToPutNonemptyString() {
+        String actualResult = this.findPosition.findPosition("", "se");
         String expectedResult = "Put non empty input";
         assertNotEquals(expectedResult, actualResult);
     }

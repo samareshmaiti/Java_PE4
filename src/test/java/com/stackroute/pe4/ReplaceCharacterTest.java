@@ -30,8 +30,9 @@ public class ReplaceCharacterTest {
         this.replaceCharacter = null;
     }
 
+    //this test method checks for whether the characters are  present and if not return the same string as input
     @Test
-    public void givenStringShouldReturnSameInputString() {
+    public void givenStringShouldReturnSameAsInputString() {
 
         String actualResult = this.replaceCharacter.characterReplace("java is java", 'd', 'l');
         String expectedResult = "java is java";
@@ -39,8 +40,9 @@ public class ReplaceCharacterTest {
 
     }
 
+    //this test method checks for whether the characters are  present and  return the string after replacing the characters
     @Test
-    public void givenStringShouldReturnPositiveResult() {
+    public void givenStringShouldReturnReplacedString() {
 
         String actualResult = this.replaceCharacter.characterReplace("daily dry", 'd', 'l');
         String expectedResult = "faity fry";
@@ -48,8 +50,9 @@ public class ReplaceCharacterTest {
 
     }
 
+    //this test method checks for whether the given string is empty
     @Test
-    public void givenEmptyStringShouldReturnErrorMessage() {
+    public void givenEmptyStringShouldReturnEmptyOutput() {
 
         String actualResult = this.replaceCharacter.characterReplace("", 'd', 'l');
         String expectedResult = "";

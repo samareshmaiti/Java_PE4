@@ -32,7 +32,7 @@ public class StringSortingTest {
         this.stringSorting = null;
     }
 
-
+    //this test method sotrd the words of the given string
     @Test
     public void givenStringShouldReturnSortedString() {
         String actualResult = this.stringSorting.sortedString("java is good");
@@ -40,15 +40,17 @@ public class StringSortingTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    //this test method is checks for empty string
     @Test
-    public void givenEmptyStringShouldReturnErrorMessage() {
+    public void givenEmptyStringShouldReturnEmptyMessage() {
         String actualResult = this.stringSorting.sortedString("");
         String expectedResult = "";
         assertEquals(expectedResult, actualResult);
     }
 
+    //this test method checks whether the expected result and actual result are equal
     @Test
-    public void givenStringShouldReturnNegativeResult() {
+    public void givenStringShouldReturnExpectedAndActualResultsAreNotEqual() {
         String actualResult = this.stringSorting.sortedString("java is programing language");
         String expectedResult = "aajv is programing aaegglnu";
         assertNotEquals(expectedResult, actualResult);

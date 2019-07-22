@@ -29,7 +29,7 @@ public class StringTransposeTest {
         this.stringTranspose = null;
     }
 
-
+    //this test method shows the tranpose of the given string
     @Test
     public void givenStringShouldReturnTransposeString() {
         String actualResult = this.stringTranspose.transposeOfString("a quick brown fox jumps over the lazy dog");
@@ -37,6 +37,7 @@ public class StringTransposeTest {
         assertEquals(actualResult, expectedResult);
     }
 
+    //this test method checks for the empty input string and return empty string
     @Test
     public void givenEmptyStringShouldReturnEmptyString() {
         String actualResult = this.stringTranspose.transposeOfString("");
@@ -44,8 +45,9 @@ public class StringTransposeTest {
         assertEquals(actualResult, expectedResult);
     }
 
+    //this test method checks whether actual result and expected result are equal or not
     @Test
-    public void givenStringShouldReturnErrorMessage() {
+    public void givenStringShouldReturnNotEqual() {
         String actualResult = this.stringTranspose.transposeOfString("samaresh maiti");
         String expectedResult = "";
         assertNotEquals(actualResult, expectedResult);
